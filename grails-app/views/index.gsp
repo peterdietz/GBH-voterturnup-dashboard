@@ -2,14 +2,14 @@
 <html>
 <head>
     <meta name="layout" content="main"/>
-    <title>Welcome to Grails</title>
+    <title>Voter Turnup</title>
 
     <asset:link rel="icon" href="favicon.ico" type="image/x-ico" />
 </head>
 <body>
     <content tag="nav">
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Application Status <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Us <span class="caret"></span></a>
             <ul class="dropdown-menu">
                 <li><a href="#">Environment: ${grails.util.Environment.current.name}</a></li>
                 <li><a href="#">App profile: ${grailsApplication.config.grails?.profile}</a></li>
@@ -27,7 +27,7 @@
             </ul>
         </li>
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Artefacts <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pricing <span class="caret"></span></a>
             <ul class="dropdown-menu">
                 <li><a href="#">Controllers: ${grailsApplication.controllerClasses.size()}</a></li>
                 <li><a href="#">Domains: ${grailsApplication.domainClasses.size()}</a></li>
@@ -36,7 +36,7 @@
             </ul>
         </li>
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Installed Plugins <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Careers <span class="caret"></span></a>
             <ul class="dropdown-menu">
                 <g:each var="plugin" in="${applicationContext.getBean('pluginManager').allPlugins}">
                     <li><a href="#">${plugin.name} - ${plugin.version}</a></li>
@@ -45,34 +45,30 @@
         </li>
     </content>
 
-
-    <div class="svg" role="presentation">
-        <div class="grails-logo-container">
-            <asset:image src="grails-cupsonly-logo-white.svg" class="grails-logo"/>
-        </div>
-    </div>
-
     <div id="content" role="main">
         <section class="row colset-2-its">
-            <h1>Welcome to GiveBackHack</h1>
+            <h1>Voter Turnup</h1>
 
-            <p>
-                Congratulations, you have successfully started your first Grails application! At the moment
-                this is the default page, feel free to modify it to either redirect to a controller or display
-                whatever content you may choose. Below is a list of controllers that are currently deployed in
-                this application, click on each to execute its default action:
-            </p>
+            <ul class="nav nav-tabs">
+                <li role="presentation" class="active"><a href="/">Geographic View</a></li>
+                <li role="presentation"><a href="/voter">Voter View</a></li>
+            </ul>
 
-            <div id="controllers" role="navigation">
-                <h2>Available Controllers:</h2>
-                <ul>
-                    <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-                        <li class="controller">
-                            <g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link>
-                        </li>
-                    </g:each>
-                </ul>
+            <div class="row>">
+                <iframe width="100%" height="520" frameborder="0" src="https://sphanley.carto.com/builder/610b9fba-2841-11e7-beed-0e3a376473ab/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
             </div>
+
+            <form>
+                <p>Flag:</p>
+                <input type="checkbox">Doors to Register</input><br/>
+                <input type="checkbox">Persuasion doors to avoid</input>
+            </form>
+
+            <button name="turf">Cut Turf</button>
+            <br/>
+            <button name="list">Print Lists</button>
+
+
         </section>
     </div>
 
